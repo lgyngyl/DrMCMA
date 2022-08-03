@@ -1,0 +1,7 @@
+{
+  "name": "DMCMA",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
