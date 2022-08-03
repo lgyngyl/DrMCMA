@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+  <ion-buttons slot="start">
+    <ion-button expand="block" [routerLink]="['/dashboard-patient']">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+
+  </ion-buttons>
+  <ion-title>Appointment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+      <ion-label position="floating">Name:</ion-label>
+      <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Address:</ion-label>
+        <ion-input></ion-input>
+        </ion-item>
+    </ion-card-content>
+  <ion-item>
+    <ion-label position="floating">Pick date</ion-label>
+    <ion-input
+      value="{{ date | date: 'dd.MM.yyyy' }}"
+      id="date"
+      class="ion-text-end">
+    </ion-input>
+    <ion-popover trigger="date" size="cover">
+      <ng-template>
+        <ion-datetime
+          presentation="date"
+          [(ngModel)]="date"
+          locale="en" >
+        </ion-datetime>
+      </ng-template>
+    </ion-popover>
+  </ion-item>
+</ion-card>
+
+<div class="ion-text-center">
+  <ion-button [routerLink]="['/reservation']">Appoint Now!</ion-button>
+  </div>
+</ion-content>
